@@ -1,24 +1,20 @@
-import logo from './logo.svg';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
+import Borpage from './pages/Borpage';
+import PrototypeEvent from './pages/PrototypeEvent';
+import Roboticsforall from './pages/Roboticsforall';
+import Home from './pages/index';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes> {/* Wrap your routes in a <Routes> */}
+        <Route path="/" element={<Home />} /> {/* Home page */}
+        <Route path="/bor" element={<Borpage />} /> {/* Borpage */}
+        <Route path="/robforall" element={<Roboticsforall />} /> {/* Roboticsforall Page */}
+        <Route path="/prototypeevent" element={<PrototypeEvent />} /> {/* PrototypeEvent Page */}
+      </Routes>
+    </Router>
   );
 }
 
